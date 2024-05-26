@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mechanic details Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fc8019;
+        }
+
+        .header .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .mechanic-info {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .mechanic-info h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #333;
+        }
+
+        .mechanic-info .details {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .services {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .services h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .services .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .services .item:last-child {
+            border-bottom: none;
+        }
+
+        .services .item .name {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .services .item .price {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .confirm-booking {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .confirm-booking button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #fc8019;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .confirm-booking button:hover {
+            background-color: #e67e22;
+        }
+
+        .footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: bisque;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(79, 0, 3.5);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .star {
+            font-size: 30px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffc107;
+            /* Yellow color */
+        }
+
+        #rating {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #review-form {
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .submit-container {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="mechanic-info">
+        <h1>Sodi's Garage</h1>
+        <div class="details">
+            Delta 1, Greater Noida, Noida - 1
+        </div>
+        <div class="details">
+            ★ 4.5 (2000+ ratings)
+        </div>
+        <div class="details">
+            ₹200 for oil change
+        </div>
+    </div>
+
+    <div class="services">
+        <h2>services</h2>
+        <div class="item">
+            <div class="name">oil change</div>
+            <div class="price">₹200</div>
+        </div>
+        <div class="item">
+            <div class="name">engine repair</div>
+            <div class="price">₹250</div>
+        </div>
+        <div class="item">
+            <div class="name">puncture</div>
+            <div class="price">₹220</div>
+        </div>
+        <div class="item">
+            <div class="name">bike not starting</div>
+            <div class="price">₹270</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Leave a Review</h2>
+        <div class="stars" id="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <div id="rating">Your Rating: <span id="rating-value">0</span></div>
+        <form id="review-form">
+            <textarea id="review-text" rows="5" placeholder="Write your review here"></textarea>
+            <div class="submit-container">
+                <input type="submit" value="Submit Review">
+            </div>
+        </form>
+    </div>
+    <div class="confirm-booking">
+        <button onclick="location.href='payment.html'">Confirm Booking</button>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const ratingValue = document.getElementById('rating-value');
+        const reviewText = document.getElementById('review-text');
+        const reviewForm = document.getElementById('review-form');
+
+        let currentRating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('mouseover', hoverStar);
+            star.addEventListener('click', setRating);
+        });
+
+        reviewForm.addEventListener('submit', submitReview);
+
+        function hoverStar(event) {
+            const hoverValue = parseInt(event.target.getAttribute('data-value'));
+            highlightStars(hoverValue);
+        }
+
+        function setRating(event) {
+            const selectedValue = parseInt(event.target.getAttribute('data-value'));
+            currentRating = selectedValue;
+            highlightStars(selectedValue);
+            ratingValue.textContent = selectedValue;
+        }
+
+        function highlightStars(value) {
+            stars.forEach(star => {
+                const starValue = parseInt(star.getAttribute('data-value'));
+                if (starValue <= value) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function submitReview(event) {
+            event.preventDefault();
+            const review = reviewText.value.trim();
+            if (currentRating === 0) {
+                alert('Please select a rating.');
+                return;
+            }
+            // Here you can submit the review with the rating and text
+            console.log(`Rating: ${currentRating}, Review: ${review}`);
+            // Reset form
+            currentRating = 0;
+            highlightStars(0);
+            ratingValue.textContent = '0';
+            reviewText.value = '';
+            alert('Thank you for your review!');
+        }
+    </script>
+
+
+    <div class="footer">
+        © 2024 GoRide. All rights reserved.
+    </div>
+
+</body>
+
+</html>

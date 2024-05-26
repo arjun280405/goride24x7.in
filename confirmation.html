@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+        }
+
+        .checkmark {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: whitesmoke;
+            stroke-miterlimit: 10;
+            margin: 10% auto;
+            box-shadow: inset 0px 0px 0px #4caf50;
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+        }
+
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #4caf50;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: none;
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #4caf50;
+            }
+        }
+
+.button{
+    width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color:white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+        <h2>Payment Successful!</h2>
+        <p>Thank you for your payment. Your transaction has been completed.</p>
+       <div><a href="recipt.html"><button class="button" style="background-color: #007bff;">print recipt</button></a></div>
+       <br>
+       <a href="https://www.google.com/maps/dir/Shop+No-GF-131A,+GoMechanic+-+Car+Battery+Shop,+Noida,+MSX+Mall,+Noida,+Uttar+Pradesh+201310/28.4557312,77.5028736/@28.4549686,77.5012951,17z/data=!3m1!4b1!4m10!4m9!1m5!1m1!1s0x390cc1c02a545bdf:0x5a28485ff33092fb!2m2!1d77.5046101!2d28.4552521!1m1!4e1!3e9?entry=ttu"><button class="button">Get Current Status</button></a>
+       <br>
+       <br>
+        <a href="https://goride24x7.mydurable.com/"><button class="button">HOME</button></a>
+                
+    </div>
+</body>
+
+</html>

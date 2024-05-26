@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Service App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #2c3e50;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #2c3e50;
+        text-align: center;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ffee58;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 300px;
+        padding: 12px;
+        margin-top: 10px;
+        background-color: #e74c3c;
+        color: #000;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-left: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #c0392b;
+    }
+
+    button:active {
+        background-color: #a93226;
+    }
+
+    #mechanicList {
+        list-style: none;
+        padding: 0;
+    }
+
+    #mechanicList li {
+        background-color: #ffee58;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        color: #000;
+    }
+
+    #mechanicList h3 {
+        margin-top: 0;
+        color: #000;
+    }
+
+    #mechanicList p {
+        margin-top: 5px;
+        color: #000;
+    }
+
+    h1,
+    h3 {
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Near By Vehicle Mechanics</h1>
+        <ul id="mechanicList">
+            <li>
+                <h3>John's Auto Repair</h3>
+                <p>Specializes in all types of repairs</p>
+                <p>Rate: ₹500 per hour</p>
+                <p>Time: In 30min</p>
+                <p>250m away from your location</p>
+                <div class="button-container">
+                    <a href="internidiate_jhon.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Sodhi Garage</h3>
+                <p>Expert in tire services</p>
+                <p>Rate: ₹300 per hour</p>
+                <p>Time: In 35min</p>
+                <p>400m away from your location</p>
+                <div class="button-container">
+                    <a href="intermediate_sodi.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Rajesh Motors</h3>
+                <p>Offers comprehensive vehicle servicing</p>
+                <p>Rate: ₹400 per hour</p>
+                <p>Time: In 40min</p>
+                <p>200m away from your location</p>
+                <div class="button-container">
+                    <a href="intermidiate_rajesh.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Soni Auto Works</h3>
+                <p>Specializes in engine diagnostics</p>
+                <p>Rate: ₹450 per hour</p>
+                <p>Time: In 20min</p>
+                <p>350m away from your location</p>
+                <div class="button-container">
+                    <a href="intermidiate_soni.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Sharma's Garage</h3>
+                <p>Provides affordable repair solutions</p>
+                <p>Rate: ₹350 per hour</p>
+                <p>Time: In 25min</p>
+                <p>700m away from your location</p>
+                <div class="button-container">
+                    <a href="intermidiate_Sharma.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Kumar Auto Services</h3>
+                <p>Offers quick and efficient tire replacements</p>
+                <p>Rate: ₹320 per hour</p>
+                <p>Time: In 10min</p>
+                <p>900m away from your location</p>
+                <div class="button-container">
+                    <a href="intermidiate_kumar.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Gupta Motors</h3>
+                <p>Specializes in electrical system repairs</p>
+                <p>Rate: ₹480 per hour</p>
+                <p>Time: In 39min</p>
+                <p>800m away from your location</p>
+                <div class="button-container">
+                    <a href="intermediate_gupta.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Singh's Car Care</h3>
+                <p>Provides detailed vehicle inspections</p>
+                <p>Rate: ₹380 per hour</p>
+                <p>Time: In 5min</p>
+                <p>400m away from your location</p>
+                <div class="button-container">
+                    <a href="intermidiate_singh.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Patel Auto Works</h3>
+                <p>Offers expert advice on vehicle maintenance</p>
+                <p>Rate: ₹420 per hour</p>
+                <p>Time: In 30min</p>
+                <p>300m away from your location</p>
+                <div class="button-container">
+                    <a href="intermidiate_patel.html"><button>Book Now</button></a>
+                </div>
+            </li>
+            <li>
+                <h3>Verma Garage</h3>
+                <p>Specializes in suspension system repairs</p>
+                <p>Rate: ₹450 per hour</p>
+                <p>Time: In 48min</p>
+                <p>100m away from your location</p>
+                <div class="button-container">
+                    <a href="intermidiate_verma.html"><button>Book Now</button></a>
+                </div>
+            </li>
+        </ul>
+        <div class="button-container">
+            <a href="form2.html"><button>Back</button></a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

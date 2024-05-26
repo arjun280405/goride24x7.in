@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Service App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- CSS -->
+<style>
+    body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 30px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #ffee58;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffee58;
+    }
+
+    label {
+        margin-top: 10px;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+        width: 100%;
+        height: 60px;
+        padding: 8px;
+        margin-top: 5px;
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 5px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #0056b3;;
+        color:white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: rgb(201, 4, 4);;
+    }
+
+    button:active {
+        background-color: #004080;
+    }
+    *{
+        background-image: url();
+    }
+    #soni{
+        width: 40%;
+        padding: 10px;
+        margin-left:27%;
+        margin-top: 10px;
+        background-color: #0056b3;
+        color:white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #soni:hover {
+        background-color: rgb(201, 4, 4);
+    }
+
+   #soni:active {
+        background-color: #ffee58;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>GO R!DE</h1>
+        <h1>Vehicle Service Request</h1>
+        <form id="serviceForm">
+            <label for="location">Your Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter your location">
+            <button type="button" onclick="getLocation()">Get My Location</button>
+            <!-- <a href="https://app.readyassist.in/book-service">Get My Location On Map</a> -->
+            <label for="serviceType">Service Type:</label>
+            <select id="serviceType" name="serviceType">
+                <option value="Oil Change">Oil Change</option>
+                <option value="Tire Rotation">Tyre Rotation</option>
+                <option value="Repair"> Engine Repair</option>
+                <option value="Repair">Starting Problem</option>
+                <option value="Repair">Puncture</option>
+                <option value="Repair">Gear Problem</option>
+                <option value="Repair">Light Problem</option>
+                <option value="Repair">All Service</option>
+                <option value="Repair">Other</option>
+            </select>
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" placeholder="Enter any additional notes"></textarea>
+            <!-- <link rel="script" href="vendor.html"><button>submit Request</button> -->
+            <a href="vendor3.html" id="soni">Submit request</a>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- JS CODE -->
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+         const locationInput = document.getElementById('location');
+        locationInput.value = "Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        document.getElementById('location').innerHTML = 'Lattitude' + latitude + '<br>Longtitude' + longitude;
+    }
+
+    function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation. Please enable location access in your browser settings.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred.");
+                break;
+        }
+    }
+
+    document.getElementById('serviceForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const location = formData.get('location');
+        const serviceType = formData.get('serviceType');
+        const notes = formData.get('notes');
+        console.log("Location: " + location);
+        console.log("Service Type: " + serviceType);
+        console.log("Additional Notes: " + notes);
+    }); 
+</script>

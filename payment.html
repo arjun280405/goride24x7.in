@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payment Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(224, 155, 72);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .payment-container {
+            background-color: #ffffff;
+            border: 2px solid rgba(8, 7, 5, 5);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(101, 3, 3, 0.9);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px
+            
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #qr-code-container {
+            margin-top: 20px;
+        }
+
+        .tick-icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+            margin: 20px auto;
+            border-radius: 50%;
+            background-color: green;
+            position: relative;
+            animation: growTick 0.5s ease-out forwards;
+        }
+
+        .tick-icon {
+            font-size: 30px;
+            color: white;
+            opacity: 0;
+            animation: showTick 0.5s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes growTick {
+            0% {
+                height: 0;
+                width: 0;
+            }
+
+            100% {
+                height: 50px;
+                width: 50px;
+            }
+        }
+
+        @keyframes showTick {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <div class="payment-container">
+        <h1 style="color: black;">UPI Payment</h1>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount (INR)</label>
+                <input type="number" id="amount" name="amount" value="1500" required>
+            </div>
+            <button type="button" onclick="generateQRCode()">Generate UPI QR Code</button>
+        </form>
+        <div id="qr-code-container" class="hidden">
+            <canvas id="qr-code"></canvas>
+            <p>Scan the QR code with your UPI app (Google Pay, Paytm, etc.) to complete the payment.</p>
+        </div>
+        <div id="confirmation-message" class="hidden">
+            <div class="tick-icon-container">
+                <div class="tick-icon">✓</div>
+            </div>
+            <h2>Payment Initiated!</h2>
+            <p>Please confirm the payment in your UPI app.</p>
+            <div>
+                <a href="confirmation.html"> <button>DONE</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function generateQRCode() {
+            const name = document.getElementById('name').value;
+            const amount = document.getElementById('amount').value;
+
+            if (name && amount) {
+                const upiId = '7974291518@paytm';
+                const upiString = `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
+
+                const qr = new QRious({
+                    element: document.getElementById('qr-code'),
+                    value: upiString,
+                    size: 200,
+                });
+
+                document.getElementById('qr-code-container').classList.remove('hidden');
+                document.getElementById('confirmation-message').classList.remove('hidden');
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
